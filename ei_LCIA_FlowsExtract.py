@@ -3,6 +3,9 @@
 
 Last modified June 2021
 @author: pauliuk
+
+see: https://github.com/IndEcol/openLCA_ecoinvent_Material_Footprint_LCIA
+
 """
 
 # Script ei_LCIA_FlowsExtract.py

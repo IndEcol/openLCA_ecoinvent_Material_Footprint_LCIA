@@ -3,6 +3,9 @@
 
 Last modified June 2021
 @author: pauliuk
+
+see: https://github.com/IndEcol/openLCA_ecoinvent_Material_Footprint_LCIA
+
 """
 
 # Script  ei_LCIA_MF_populate.py
@@ -23,7 +26,7 @@ import mf_Paths
 def CF_generate(mli,Val,dnames,duuid,dunit,ei_version_string):
     # create dictionary with characterisation factor
 
-    if ei_version_string == '_ei_3_7_1':
+    if ei_version_string == '_ei_3_7_1' or ei_version_string == '_ei_3_8': # unit defintions have not changed, are the same for both ei versions.
         U_Mass = {
             "@type": "Unit",
             "@id": "20aadc24-a391-41cf-b340-3e4529f44bde",
@@ -90,20 +93,20 @@ def CF_generate(mli,Val,dnames,duuid,dunit,ei_version_string):
 #################
 # Set configuration data
 
-ei_version_string = '_ei_3_7_1'
-#ei_version_string = '_ei_3_8'
+#ei_version_string = '_ei_3_7_1'
+ei_version_string = '_ei_3_8'
 
 #%%
 if ei_version_string == '_ei_3_7_1':
     tp   = mf_Paths.data_path_ei371
     MSn  = 'LCIA_Define_ecoinvent_3_7'
     MDn  = 'ecoinvent_3_7_Match'
-    DN   = 411
+    DN   = 414
 if ei_version_string == '_ei_3_8':
     tp   = mf_Paths.data_path_ei38
     MSn  = 'LCIA_Define_ecoinvent_3_8'
     MDn  = 'ecoinvent_3_8_Match'
-    DN   = 411
+    DN   = 419
     
 ScriptConfig = {}
 ScriptConfig['Current_UUID'] = str(uuid.uuid4())
